@@ -26,9 +26,17 @@ let animation = shape( () => {
 });
 
 let avi = shape( () => {
+ displace(0.0, 0.3, 0.0);
  color(blue);
  box(0.2, 0.2, 0.2)
 });
 
+let colorChangeAnimation = shape( () => {
+ displace(0.3, 0.0, 0.0);
+ color(colorChange);
+ torus(0.3, 0.1);
+});
+
  animation();
  avi();
+ colorChangeAnimation();
