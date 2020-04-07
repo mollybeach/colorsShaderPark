@@ -1,0 +1,34 @@
+let standard = vec3(1.0, 1.0, 1.0);
+let red = vec3(1.0, 0.0, 0.0);
+let blue = vec3(0.0,0.0,1.0);
+let green = vec3(1.0,0.0,0.0);
+let yellow = vec3(1.9,1.6,0.0);
+let black = vec3(0.0,0.0, 0.0);
+let white = vec3(1.0,1.0,2.0);
+let orange = vec3(2.8, 0.10, 0.0);
+let purple = vec3(0.1,0.0,0.9);
+let magenta = vec3(0.5,0.0,0.1);
+let hotPink = vec3(1.5,0.0,0.1);
+let lavender = vec3(1.0, 0.5, 1.0);
+let brown = vec3(0.2,0.1,0.05);
+let darkGreen = vec3(0.02,0.245,0.05);
+let lightGreen = vec3(0.02,0.245,0.05);
+let lightBrown = vec3(1.0,0.4,0.03);
+let lightBlue = vec3(0.0,1.9,1.8);
+let pink = vec3(3.0, 0.5, 1.0);
+let m = abs(sin(time));
+let colorChange = m*lavender+(1-m)*green;
+let colorChange2 = m*yellow+(1-m)*lightBlue;
+
+let animation = shape( () => {
+ color(magenta);
+ sphere(0.3);
+});
+
+let avi = shape( () => {
+ color(blue);
+ box(0.2, 0.2, 0.2)
+});
+
+ animation();
+ avi();
