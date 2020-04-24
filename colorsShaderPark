@@ -1,4 +1,5 @@
 let standard = vec3(1.0, 1.0, 1.0);
+let skinColor  = vec3(0.9,0.6,0.6);
 let red = vec3(1.0, 0.0, 0.0);
 let blue = vec3(0.0,0.0,1.0);
 let green = vec3(1.0,0.0,0.0);
@@ -17,7 +18,10 @@ let lightBrown = vec3(1.0,0.4,0.03);
 let lightBlue = vec3(0.0,1.9,1.8);
 let pink = vec3(3.0, 0.5, 1.0);
 let lightYellow = vec3(1.30, .930, 0.150);
-let skinColor  = vec3(0.9,0.6,0.6);
+let limeGreen = vec3(2.9,10.9,1.7);
+let purplePink = vec3(2.9,0.9,1.7);
+let purpleGray = vec3(1.0,0.6,1.0);
+let midBlue =  vec3(0.0,1.9,1.8);
 
 let m = abs(sin(time));
 let colorChange = m*lavender+(1-m)*green;
