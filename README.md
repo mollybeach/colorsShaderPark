@@ -1,5 +1,3 @@
-# Functions Shader Park
-
 --- Algorithms ---
 ### Function fractalNoise()
     Example 
@@ -63,14 +61,13 @@
         color(vec3(f));
         sphere(0.5);
     Description : Generates a radial gradient based on the camera direction that can be used to create edge glow. When used in reflections this technique will make something looked at straight on the least reflective and when turned nearly 90 degrees on edge the most reflective. More information can be found [here](https://www.dorian-iten.com/fresnel/) Syntax : ```js fresnel(value); ```Parameters  :**value** Float: amount Description : Converts Hue, Saturation, Value(also called Brightness) into RGB values. Syntax : ```js hsv2rgb(inputColor); ```Parameters  :**inputColor** Vec3: input hue, saturation, color values from 0.0 to 1.0 
-### Function 
-### lightDirection()
+### Function lightDirection()
     Example 
         lightDirection(0, 0, 1);
         //alternatively lightDirection(vec3(0, 0, 1));
         sphere(0.5);
     Description : Sets the direction of the built-in lighting. By default the light points from the top down as lightDirection(0, 1, 0). Syntax : ```js lightDirection(x, y, z); lightDirection(position); ```Parameters  :**x** Float: value from 0.0 to 1.0. Defaults to 0 **y** Float: value from 0.0 to 1.0. Defaults to 1 **z** Float: value from 0.0 to 1.0. Defaults to 0 **position** Vec3: defaults to vec3(0, 1, 0). 
-### metal()
+### Function metal()
     Example 
         metal(.5);
         sphere(0.3);
