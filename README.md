@@ -1,4 +1,4 @@
---- Algorithms ---
+# --- Algorithms ---
 ### Function fractalNoise()
     Example 
         let s = getSpace();
@@ -41,7 +41,7 @@
         expand(distro.w * -0.4);
     Description : Computes the distance to the nearest of N points distributed over a sphere. Syntax : ```js sphericalDistribution(p, numPoints) ```Parameters  :**p** vec3: a point to sample. **numPoints** Float: number of points distributed on the sphere. ### Returns Vec4: x,y,z is the location of the point nearest to p, and w is the distance to that point ( w = distance(xyz,p) )
 
---- Color ---
+# --- Color ---
 
 ### Function color()
     Example 
@@ -117,7 +117,7 @@
         sphere(0.5);
     Description : Defines how shiny the shape should be. In other 3D modeling applications the term albedo might be used instead of shine. The default lighting in Shader Park is based on [PBR](https://learnopengl.com/PBR/Lighting) which provides a albedo property. Syntax : ```js shine(value); ``` Parameters : **value** Float: value from 0.0 to 1.0. Defaults to 
 
---- Geometries ---
+# --- Geometries ---
 ### Function box()
     Example 
         box(0.3, 0.3, 0.3);
@@ -126,7 +126,7 @@
     Example 
         boxFrame(vec3(.4), .02);
     Description : Draw a boxFrame with the given size and thickness Syntax : ```js boxFrame(size, thickness); ``` Parameters : **size** Vector3: size of the boxframe **thickness** Float: thickness of the frame 
-#### Function cylinder()
+### Function cylinder()
     Example 
         cylinder(0.3, 0.3);
     Description : Draw a cylinder with the given radius, and height Syntax : ```js cylinder(radius, height); ``` Parameters : **radius** Number: radius of the box **height** Number: height of the box Syntax : ```js cylinder(size) ``` Parameters : **size** vec3: radius, and height 
@@ -205,7 +205,7 @@
         torus(0.3, 0.08);
     Description : Draw a torus with the given outer ring size and inner ring size Syntax : ```js torus(outerRingSize, innerRingSize); ``` Parameters : **outerRingSize** Number: size of the outer ring **innerRingSize** Number: size of the inner ring 
 
---- Global Settings ---
+# --- Global Settings ---
 
 ### Function setGeometryQuality()
     Example 
@@ -226,7 +226,7 @@
         expand(n*.2);
     Description : As you distort the surface of any of the objects you create you may notice artifacting. To get rid of this you can use a smaller step size, but at the cost of performance. This function provides the same functionality as [setGeometryQuality](/references-js/global-settings/setGeometryQuality.html), but is provided as a short hand for anyone with previous raymarching experience. The raymarching engine that powers Shader Park uses an algorithm called sphere tracing. In this process a ray / photon is marched forwards from the camera's perspective towards the current scene. The size of the step is determined from setStepSize(). If the value is really small the engine must take many more steps as it calculates the distance to the surface of the object. This will provide more detail, but it is calculated for every pixel, which can dramatically slow down the performance. A great breakdown of the how raymarching works can be found [here](https://www.youtube.com/watch?v=Cp5WWtMoeKg) (Note the example in the video uses GLSL and is built in Unity). Syntax : ```js setStepSize(size); ``` Parameters : **size** Float: value from 0.0 to 1.0. Defaults to 0.85; 
 
---- GLSL ---
+# --- GLSL ---
 
 ### Function glslFunc() 
     Example 
@@ -343,7 +343,7 @@
         hexPrism(vec2(.2, .2));
     Description : Generates an primitive from the provided GLSL function. The provided GLSL function must return a float(the distance filed) and the first parameter must be a vec3(position). This will not work with GL ES3. Syntax : ```js glslSDF(glslCode); ``` Parameters : **glslCode** String: The glsl source code. ### Returns Function: A js function of the glslCode. Any arguments given to this function will be forwarded as arguments to the provided glsl function. 
 
---- GLSL ---
+# --- Input ---
 
 ### Function getRayDirection() 
     Example 
@@ -391,7 +391,7 @@
         sphere(endSize * oscillation);
     Description : Time is passed in by default which can be used for animation. Time is incremented every new frame that is drawn and is scaled to milliseconds. Syntax : ```js time ``` 
 
---- Math ---
+# --- Math ---
 
 ### Function toSpherical() 
     Example toSpherical simple
@@ -409,6 +409,9 @@
         sphere(0.5);
         expand(0.02*m);
     Description : Gets the spherical coordinates form the provided space. This function is commonly used with [getSpace()](/references-js/input/getSpace.html). Syntax : ```js toSpherical(space); ``` Parameters : **space** Vec3: coordinate space ### Returns Vec3: spherical coordinate space 
+
+# --- Operations  ---
+
 ### Function blend() 
     Example 
         blend(0.23);
