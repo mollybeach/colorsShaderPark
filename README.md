@@ -527,52 +527,98 @@
         box(0.2, 0.2, 0.2); 
     Description : New geometry will be added it to the scene. Union is applied by default. Syntax : ```js union(); ``` 
 
+# Functions 
 
-#Functions
-    toSpherical(space); // Parameters Vec3: coordinate space
-blend(amount); // Parameters amount Number: value from 0 to 1.0 to blend
-difference(), //subtract the geometry from the scene
-displace(xPosition, yPosition, zPosition);
-displace(position); // Parameters position Vec3: coordinate space
-expand(amount); // Parameters amount Number: value from 0 to 1.0 to expand
-intersect(), //intersect the geometry with the scene
-mirrorN(count, spacing); // Parameters count Number: number of mirrors to create spacing Number: distance between mirrors
-mirrorX(), //mirror all operations along the x-axis
-mirrorXYZ(), //mirror all operations along the x, y, and z axis
-mirrorY(), //mirror all operations along the y-axis
-mirrorZ(), //mirror all operations along the z-axis
-mixGeo(amount); // Parameters amount Number: value from 0 to 1.0 to mix
-reset(), //reset the coordinate space back to (0, 0, 0) after it has been translated, or distorted using displace, mirror, or rotate
-rotateX(amount) //amount Number: value in radians, which can rotate a full 360° by providing a value from -PI/2 to PI/2,
-rotateY(amount) //amount Number: value in radians, which can rotate a full 360° by providing a value from -PI/2 to PI/2,
-rotateZ() //amount Number: value in radians, which can rotate a full 360° by providing a value from -PI/2 to PI/2,
-setSDF(distance); // Parameters distance Float: The distance from the current position to the geometry's surface.,
-setSpace(space); // Parameters space Vec3: coordinate space,
-shell(thickness); // thickness Number: value from 0.001 to .2,
-union(), //Combine two or more geometry together,
-box(width, height, depth) // width Number: width of the sculpture value from 0 to 1.0 height Number: height of the sculpture value from 0 to 1.0 depth Number: depth of the sculpture value from 0 to 1.0,
-boxFrame(size, thickness) // size Number: size of the box frame value from 0 to 1.0 thickness Number: thickness of the box frame value from 0 to 1.0,
-cylinder(radius, height) // radius Number: radius of the sculpture value from 0 to 1.0 height Number: height of the sculpture value from 0 to 1.0,
-grid(count, scale, thickness); // count Number: number of grid lines scale Number: distance between grid lines thickness Number: thickness of the grid lines,
-line(startPosition, endPosition, thickness); // startPosition Vec3: starting position of the line endPosition Vec3: ending position of the line thickness Number: thickness of the line,
-shape(shape_func); // shape_func Function: function that returns a number,
-sphere(size); // size Number: size of the sphere value from 0 to 1.0,
-torus(outerRingSize, innerRingSize); // outerRingSize Number: size of the outer ring value from 0 to 1.0 innerRingSize Number: size of the inner ring value from 0 to 1.0,
-setGeometryQuality(size); // size Number: size of the geometry value from 0 to 1.0,
-setMaxIterations(iterations); // iterations Number: number of iterations value from 0 to 100,
-setStepSize(size); // size Number: size of the step value from 0 to 1.0,
-glslFunc(func); // func String: glsl function,
-glslFuncES3(func); // func String: glsl function,
-glslSDF(glslCode);  // glslCode String: glsl code,
-getRayDirection(); // Returns Vec3: direction of the ray,
-getSpace();  // Returns Vec3: coordinate space,
-input(startValue, minValue, maxValue); // startValue Number: starting value minValue Number: minimum value maxValue Number: maximum value,
-input(startValue); // startValue Number: starting value,
-input();  // Returns Number: value from 0 to 1.0,
-mouse, // Returns Vec3: mouse position,
-mouse.x, // Returns Number: mouse x position,
-mouse.y, // Returns Number: mouse y position,
-mouse.z, // Returns Number: mouse z position,
-mouseIntersection();  // Returns Vec3: mouse intersection,
-normal(), // Returns Vec3: normal,
-time, // Returns Number: time,
+## toSpherical(space); 
+    Parameters Vec3: coordinate space
+## blend(amount); 
+    Parameters amount Number: value from 0 to 1.0 to blend
+## difference();  
+    subtract the geometry from the scene
+## displace(xPosition yPosition zPosition);
+## displace(position);  
+    Parameters position Vec3: coordinate space
+## expand(amount);  
+    Parameters amount Number: value from 0 to 1.0 to expand
+## intersect();  
+    intersect the geometry with the scene
+## mirrorN(count spacing);  
+    Parameters count Number: number of mirrors to create spacing Number: distance between mirrors
+## mirrorX();  
+    mirror all operations along the x-axis
+## mirrorXYZ();  
+    mirror all operations along the x y and z axis
+## mirrorY(); 
+    mirror all operations along the y-axis
+## mirrorZ(); 
+     mirror all operations along the z-axis
+## mixGeo(amount);  
+    Parameters amount Number: value from 0 to 1.0 to mix
+## reset();
+    reset the coordinate space back to (0 0 0) after it has been translated or distorted using displace mirror or rotate
+## rotateX(amount);
+    amount Number: value in radians which can rotate a full 360° by providing a value from -PI/2 to PI/2
+## rotateY(amount)  
+    amount Number: value in radians which can rotate a full 360° by providing a value from -PI/2 to PI/2
+## rotateZ()  
+    amount Number: value in radians which can rotate a full 360° by providing a value from -PI/2 to PI/2
+## setSDF(distance);  
+    Parameters distance Float: The distance from the current position to the geometry's surface.
+## setSpace(space);  
+    Parameters space Vec3: coordinate space
+## shell(thickness);  
+     thickness Number: value from 0.001 to .2
+## union();  
+    Combine two or more geometry together
+## box(width height depth)  
+    width Number: width of the sculpture value from 0 to 1.0 height Number: height of the sculpture value from 0 to 1.0 depth Number: depth of the sculpture value from 0 to 1.0
+## boxFrame(size thickness)  
+    size Number: size of the box frame value from 0 to 1.0 thickness Number: thickness of the box frame value from 0 to 1.0
+## cylinder(radius height)  
+    radius Number: radius of the sculpture value from 0 to 1.0 height Number: height of the sculpture value from 0 to 1.0
+## grid(count scale thickness);  
+     count Number: number of grid lines scale Number: distance between grid lines thickness Number: thickness of the grid lines
+## line(startPosition endPosition thickness);  
+    startPosition Vec3: starting position of the line endPosition Vec3: ending position of the line thickness Number: thickness of the line
+## shape(shape_func);  
+    shape_func Function: function that returns a number
+## sphere(size);  
+    size Number: size of the sphere value from 0 to 1.0
+## torus(outerRingSize innerRingSize);  
+    outerRingSize Number: size of the outer ring value from 0 to 1.0 innerRingSize Number: size of the inner ring value from 0 to 1.0
+## setGeometryQuality(size);  
+    size Number: size of the geometry value from 0 to 1.0
+## setMaxIterations(iterations);  
+    iterations Number: number of iterations value from 0 to 100
+## setStepSize(size);  
+    size Number: size of the step value from 0 to 1.0
+## glslFunc(func);  
+    func String: glsl function
+## glslFuncES3(func);  
+    func String: glsl function
+## glslSDF(glslCode);   
+    glslCode String: glsl code
+## getRayDirection();  
+    Returns Vec3: direction of the ray
+## getSpace();   
+    Returns Vec3: coordinate space
+## input(startValue minValue maxValue);  
+    startValue Number: starting value minValue Number: minimum value maxValue Number: maximum value
+## input(startValue);  
+    startValue Number: starting value
+## input();   
+    Returns Number: value from 0 to 1.0
+## mouse
+    Returns Vec3: mouse position
+## mouse.x
+    Returns Number: mouse x position
+## mouse.y
+    Returns Number: mouse y position
+## mouse.z 
+    Returns Number: mouse z position
+## mouseIntersection();   
+    Returns Vec3: mouse intersection
+## normal() 
+    Returns Vec3: normal
+## time
+    Returns Number: time
