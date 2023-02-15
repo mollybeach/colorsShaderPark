@@ -668,3 +668,20 @@ rotateX(PI*time/50);
 rotateY(PI*time/50);
 rotateZ(PI*time/50);
 mandelShape();
+
+
+
+
+function capsule(p, a, b, r) {
+  let pa = p - a;
+  let ba = b - a;
+  let h = clamp(dot(pa, ba) / dot(ba, ba), 0.0, 1.0);
+  return length(pa - ba * h) - r;
+}
+let p = getSpace();
+let a = vec3(1.0, 1.0, 1.0);
+let b = vec3(0.0, 0.0, 0.0);
+let r = 0.1;
+let d = capsule(p,a,b,r);
+
+setSDF(d);
