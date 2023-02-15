@@ -623,3 +623,48 @@
     Returns Vec3: normal
 ### time
     Returns Number: time
+
+
+Mandelbulb Javascript 
+
+let mandelShape = shape(() => {
+function mandelbulb(p) {
+  let iterations = 20;
+  let powerValue = 8.0;
+  let power = 1.0 + (powerValue - 1.0) * (0.5 - cos(PI) * 0.5);
+  let z = p;
+  let dr = 1.0;
+  let r = 0.0;
+  for (let i = 0; i < iterations; i++) {
+    r = length(z);
+    if (r > 2.0) break;
+    let theta = acos(z.z / r);
+    let phi = atan(z.y, z.x);
+    dr = pow(r, power - 1.0) * power * dr + 1.0;
+    let zr = pow(r, power);
+    theta *= power;
+    phi *= power;
+    z = zr * vec3(sin(theta) * cos(phi), sin(theta) * sin(phi), cos(theta)) + p;
+  }
+  let d = 0.5 * log(r) * r / dr;
+  /*
+  //attempt at removing gray box
+  let boxDist = max(length(abs(p) - vec3(1.0, 1.0, 1.0)), length(vec3(0.0, 0.0, 0.0)));
+  return smoothstep(0.0, 0.1, boxDist) + smoothstep(0.0, 0.1, d) * d;
+	*/
+  return d
+}
+setMaxIterations(10);
+setStepSize(0.005);
+let p = getSpace();
+let d = mandelbulb(p);
+let rayDirection = getRayDirection();
+occlusion(0.8);
+shell(2.0);
+color(normalize(rayDirection).x, normalize(rayDirection).y, normalize(rayDirection).z);
+setSDF(d);
+});
+rotateX(PI*time/50);
+rotateY(PI*time/50);
+rotateZ(PI*time/50);
+mandelShape();
